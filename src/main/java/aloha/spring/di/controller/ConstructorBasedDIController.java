@@ -17,7 +17,10 @@ public class ConstructorBasedDIController {
      * based injections. For constructor based injection, the @Autowried is
      * optional.
      * 
-     * @param greetingService Service to be injectedF
+     * Annotate constructor parameter with @Qualifier to tell Spring which bean to
+     * inject when an interface has mulitple implementations.
+     * 
+     * @param greetingService Service to be injected
      */
     public ConstructorBasedDIController(@Qualifier("constructor") GreetingService greetingService) {
         this.greetingService = greetingService;
