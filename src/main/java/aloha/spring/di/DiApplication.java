@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import aloha.spring.di.controller.ConstructorBasedDIController;
+import aloha.spring.di.controller.MyController;
 import aloha.spring.di.controller.PropertyBasedDIController;
 import aloha.spring.di.controller.SetterBasedDIController;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,10 @@ public class DiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DiApplication.class, args);
+
+		log.info("------ Primary Bean");
+		MyController primaryBean = ctx.getBean(MyController.class);
+		primaryBean.helloWorld();
 
 		log.info("------ Constructor Based DI");
 		ConstructorBasedDIController constructBased = ctx.getBean(ConstructorBasedDIController.class);
