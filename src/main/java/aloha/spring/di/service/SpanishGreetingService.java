@@ -4,9 +4,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 /**
- * Demo Profile
+ * Demo Profile & Default Profile
  */
-@Profile("ES")
+@Profile({ "ES", "default" })
 @Service("i18n")
 public class SpanishGreetingService implements GreetingService {
 
@@ -14,5 +14,5 @@ public class SpanishGreetingService implements GreetingService {
     public String greeting() {
         return "Hola mundo - ES";
     }
-    
+
 }
