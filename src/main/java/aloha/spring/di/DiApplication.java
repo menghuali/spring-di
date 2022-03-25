@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import aloha.spring.di.controller.ConstructorBasedDIController;
+import aloha.spring.di.controller.I18nController;
 import aloha.spring.di.controller.MyController;
 import aloha.spring.di.controller.PropertyBasedDIController;
 import aloha.spring.di.controller.SetterBasedDIController;
@@ -32,6 +33,10 @@ public class DiApplication {
 		log.info("------ Property Based DI");
 		PropertyBasedDIController propBased = ctx.getBean(PropertyBasedDIController.class);
 		propBased.helloWorld();
+
+		log.info("------ Profile");
+		I18nController i18n = ctx.getBean(I18nController.class);
+		i18n.helloWorld();		
 
 	}
 
