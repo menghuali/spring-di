@@ -17,11 +17,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Component
-public class LifecycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware,
+public class LifeCycleDemoBean implements InitializingBean, DisposableBean, BeanNameAware,
         BeanFactoryAware, ApplicationContextAware {
 
-    public LifecycleDemoBean() {
-        log.info("## I'm in the LifecycleBean Constructor");
+    public LifeCycleDemoBean() {
+        log.info("## I'm in the LifeCycleDemoBean Constructor");
     }
 
     @Override
@@ -32,7 +32,7 @@ public class LifecycleDemoBean implements InitializingBean, DisposableBean, Bean
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        log.info("## The LifecycleBean has its properties set!");
+        log.info("## The LifeCycleDemoBean has its properties set!");
 
     }
 
